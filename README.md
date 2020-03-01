@@ -8,7 +8,7 @@
 Flashcard app with added features. Includes ability to create new flashcards and toggle between screens.
 
 ### App Walk-though
-<img src=http://g.recordit.co/JlicM8cKV2.gif width=200><br>
+<img src=http://g.recordit.co/bBFb8tpicj.gif width=200><br>
 
 ## Required
 - [x] User can open the creation screen
