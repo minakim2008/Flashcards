@@ -27,6 +27,14 @@ class ViewController: UIViewController {
         questionSide.layer.borderColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
         questionSide.backgroundColor = UIColor.white
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let navigationController = segue.destination as! UINavigationController
+        let creationController = navigationController.topViewController as! CreationViewController
+        
+        creationController.flashcardsController = self
+    }
+    
     @IBAction func didTapFlashcard(_ sender: Any) {
         if (questionSide.isHidden == true){
             questionSide.isHidden = false
@@ -34,7 +42,10 @@ class ViewController: UIViewController {
             questionSide.isHidden = true
         }
     }
-    
+    func updateFlashcard(question: String, answer: String) {
+        questionSide.text = question
+        answerSide.text = answer
+    }
 }
     
 

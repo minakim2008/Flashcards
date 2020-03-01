@@ -15,6 +15,7 @@
 		F004292323EF478C00BD6105 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F004292123EF478C00BD6105 /* LaunchScreen.storyboard */; };
 		F004292E23EF478D00BD6105 /* FlashcardsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F004292D23EF478D00BD6105 /* FlashcardsTests.swift */; };
 		F004293923EF478D00BD6105 /* FlashcardsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F004293823EF478D00BD6105 /* FlashcardsUITests.swift */; };
+		F083886F240B55C2000CEE9B /* CreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F083886E240B55C2000CEE9B /* CreationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		F004293423EF478D00BD6105 /* FlashcardsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlashcardsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F004293823EF478D00BD6105 /* FlashcardsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardsUITests.swift; sourceTree = "<group>"; };
 		F004293A23EF478D00BD6105 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F083886E240B55C2000CEE9B /* CreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				F004291823EF478600BD6105 /* SceneDelegate.swift */,
 				F004291A23EF478600BD6105 /* ViewController.swift */,
 				F004291C23EF478600BD6105 /* Main.storyboard */,
+				F083886E240B55C2000CEE9B /* CreationViewController.swift */,
 				F004291F23EF478C00BD6105 /* Assets.xcassets */,
 				F004292123EF478C00BD6105 /* LaunchScreen.storyboard */,
 				F004292423EF478C00BD6105 /* Info.plist */,
@@ -262,6 +265,7 @@
 				F004291B23EF478600BD6105 /* ViewController.swift in Sources */,
 				F004291723EF478600BD6105 /* AppDelegate.swift in Sources */,
 				F004291923EF478600BD6105 /* SceneDelegate.swift in Sources */,
+				F083886F240B55C2000CEE9B /* CreationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
