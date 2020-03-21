@@ -8,9 +8,7 @@
 Flashcard app w/ added features. Implemented animations when switching between question/answer and toggling to/from cards. Improved UI w/ new icons for buttons.
 
 ### App Walk-though
-<img src="http://g.recordit.co/rBFmgHZ7NE.gif" width=200><br>
-
-`TODO://` In the User stories section below, add an `x` between the `-[ ]` like this `- [x]` for any user story you complete. (☝️ Remove this paragraph after after checking off user stories)
+<img src=http://g.recordit.co/OlbXQV2Ejf.gif width=200><br>
 
 ## Required
 - [x] User should see the app icon 
@@ -31,7 +29,7 @@ Flashcard app w/ added features. Can add/save and delete multiple cards.
 
 ### App Walk-though
 
-<img src="http://g.recordit.co/Gvqvo3TIqw.gif" width=200><br>
+<img src=http://g.recordit.co/Gvqvo3TIqw.gif width=200><br>
 
 ## Required
 - [x] User can browse through multiple flashcards
