@@ -133,7 +133,7 @@
             <objects>
                 <viewController id="h4H-XS-QMf" customClass="CreationViewController" customModule="Flashcards" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3iP-or-i4u">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Question" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ljM-iB-JyD">
@@ -179,7 +179,6 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OVP-d9-0X0" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hIm-Rn-TT6">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
