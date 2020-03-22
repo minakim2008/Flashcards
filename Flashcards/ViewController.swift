@@ -8,7 +8,7 @@
 
 import UIKit
 
-//Struct (similar to class)
+//Struct
 struct Flashcard {
     var question: String
     var answer: String
