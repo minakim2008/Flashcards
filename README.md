@@ -8,7 +8,7 @@
 Flashcard app w/ added features. Implemented animations when switching between question/answer and toggling to/from cards. Improved UI w/ new icons for buttons.
 
 ### App Walk-though
-<img src=http://g.recordit.co/OlbXQV2Ejf.gif width=200><br>
+<img src=http://g.recordit.co/cJVthSA294.gif width=200><br>
 
 ## Required
 - [x] User should see the app icon 
