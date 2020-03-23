@@ -8,7 +8,7 @@
 
 import UIKit
 
-//Struct
+//Struct (similar to a class)
 struct Flashcard {
     var question: String
     var answer: String
@@ -16,6 +16,7 @@ struct Flashcard {
     
 class ViewController: UIViewController {
 
+    @IBOutlet weak var card: UIView!
     @IBOutlet weak var answerSide: UILabel!
     @IBOutlet weak var questionSide: UILabel!
     @IBOutlet weak var prevButton: UIButton!
@@ -29,25 +30,42 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         readSavedFlashcards()
-
-        answerSide.layer.cornerRadius = 25
-        answerSide.clipsToBounds = true
-        answerSide.layer.borderWidth = 8
-        answerSide.layer.borderColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1) //Color literal
-        answerSide.backgroundColor = #colorLiteral(red: 0.9340795013, green: 0.9340795013, blue: 0.9340795013, alpha: 1)
         
-        questionSide.layer.cornerRadius = 25
-        questionSide.layer.borderWidth = 8
-        questionSide.layer.borderColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
+        card.layer.cornerRadius = 25
+        card.layer.borderWidth = 8
+        card.layer.borderColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1) //Color literal
+        card.backgroundColor = UIColor.white
+        
+        //Adds shadows
+        card.layer.shadowRadius = 15.0
+        card.layer.shadowOpacity = 0.2
+        
+        
+        answerSide.clipsToBounds = true
+        questionSide.clipsToBounds = true
+        answerSide.backgroundColor = #colorLiteral(red: 0.9340795013, green: 0.9340795013, blue: 0.9340795013, alpha: 1)
         questionSide.backgroundColor = UIColor.white
         
         if (flashcards.count == 0){
-            updateFlashcard(question: "J'ai ____ beaux rêves", answer: "de")
+            updateFlashcard(question: "Question", answer: "Answer")
         }else{
             updateLabels()
             updateNextPrevButtons()
         }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        card.alpha = 0
+        card.transform = CGAffineTransform.identity.scaledBy(x: 0.75, y: 0.75)
+        
+        UIView.animate(withDuration: 0.6, delay: 0.5, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: [], animations: {
+            self.card.alpha = 1
+            self.card.transform = CGAffineTransform.identity
+        })
+    }
+    
     //Helps move between screens
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let navigationController = segue.destination as! UINavigationController
@@ -59,33 +77,85 @@ class ViewController: UIViewController {
     @IBAction func didTapOnPrev(_ sender: Any) {
         currentIndex -= 1
         //Shows current flashcards
-        updateLabels()
         updateNextPrevButtons()
+        prevMoveCardOut()
         
         //Always starts with question side when moving between flashcards
         questionSide.isHidden = false
         answerSide.isHidden = true
+        card.backgroundColor = UIColor.white
     }
     
     @IBAction func didTapOnNext(_ sender: Any) {
         currentIndex += 1
         //Shows current flashcards
-        updateLabels()
         updateNextPrevButtons()
+        nextMoveCardOut()
         
         //Always starts with question side when moving between flashcards
         questionSide.isHidden = false
+        answerSide.isHighlighted = true
+        card.backgroundColor = UIColor.white
     }
     
     @IBAction func didTapFlashcard(_ sender: Any) {
-        if (questionSide.isHidden == true){
-            questionSide.isHidden = false
-            answerSide.isHidden = true
-        }else{
-            questionSide.isHidden = true
-            answerSide.isHidden = false
+        flipFlashcards()
+    }
+    
+    func flipFlashcards(){
+        UIView.transition(with: card, duration: 0.3, options: .transitionFlipFromRight, animations: {
+            if (self.questionSide.isHidden == true){
+                self.questionSide.isHidden = false
+                self.answerSide.isHidden = true
+                self.card.backgroundColor = UIColor.white
+            }else{
+                self.questionSide.isHidden = true
+                self.answerSide.isHidden = false
+                self.card.backgroundColor = #colorLiteral(red: 0.9340795013, green: 0.9340795013, blue: 0.9340795013, alpha: 1)
+            }
+        })
+    }
+    
+    func nextMoveCardOut(){
+        UIView.animate(withDuration: 0.2, animations: {
+            self.card.transform = CGAffineTransform.identity.translatedBy(x: -300, y: 0)
+        }, completion: { finished in
+            //Labels only get updated once card has moved out of screen
+            self.updateLabels()
+            self.nextMoveCardIn()
+            })
+    }
+    //Called by nextMoveCardOut()
+    func nextMoveCardIn(){
+        //Places card on right side of screen
+        card.transform = CGAffineTransform.identity.translatedBy(x: 300, y: 0)
+        
+        //Moves card to original location
+        UIView.animate(withDuration: 0.2) {
+            self.card.transform = CGAffineTransform.identity
         }
     }
+    
+    func prevMoveCardOut(){
+        UIView.animate(withDuration: 0.2, animations: {
+            self.card.transform = CGAffineTransform.identity.translatedBy(x: 300, y: 0)
+        }, completion: { finished in
+            //Labels only get updated once card has moved out of screen
+            self.updateLabels()
+            self.prevMoveCardIn()
+            })
+    }
+    //Called by nextMoveCardOut()
+    func prevMoveCardIn(){
+        //Places card on right side of screen
+        card.transform = CGAffineTransform.identity.translatedBy(x: -300, y: 0)
+        
+        //Moves card to original location
+        UIView.animate(withDuration: 0.2) {
+            self.card.transform = CGAffineTransform.identity
+        }
+    }
+    
     
     @IBAction func didTapOnDelete(_ sender: Any) {
         let alert = UIAlertController(title: "Delete this card?", message: "Are you sure you want to delete this flashcard?", preferredStyle: .actionSheet)
