@@ -7,7 +7,7 @@
 ### App Description
 Flashcard app w/ added features. Implemented animations when switching between question/answer and toggling to/from cards. Improved UI w/ new icons for buttons.
 
-### App Walk-though
+### App Walk-Through
 <img src=http://g.recordit.co/cJVthSA294.gif width=200><br>
 
 ## Required
@@ -27,8 +27,7 @@ Flashcard app w/ added features. Implemented animations when switching between q
 ### App Description
 Flashcard app w/ added features. Can add/save and delete multiple cards.
 
-### App Walk-though
-
+### App Walk-Through
 <img src=http://g.recordit.co/Gvqvo3TIqw.gif width=200><br>
 
 ## Required
@@ -46,7 +45,7 @@ Flashcard app w/ added features. Can add/save and delete multiple cards.
 ### App Description
 Flashcard app w/ added features. Includes ability to create new flashcards and toggle between screens.
 
-### App Walk-though
+### App Walk-Through
 <img src=http://g.recordit.co/fOOQmagbj5.gif width=200><br>
 
 ## Required
@@ -65,7 +64,7 @@ Flashcard app w/ added features. Includes ability to create new flashcards and t
 ### App Description
 Flashcard app. Toggles back-and-forth between question and answer side when clicked.
 
-### App Walk-though
+### App Walk-Through
 <img src=http://g.recordit.co/eplfDi5rKO.gif width=200><br>
 
 ## Required
